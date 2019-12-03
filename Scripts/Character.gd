@@ -35,6 +35,10 @@ func _physics_process(delta):
 			on_ground = false
 	if Input.is_action_just_pressed("shoot"):
 		var plasmablast = PLASMABLAST.instance()
+		if sign($Position2D.position.x) == 1:
+			plasmablast.set_plasmablast_direction(1)
+		else:
+			plasmablast.set_plasmablast_direction(-1)
 		get_parent().add_child(plasmablast)
 		plasmablast.position = $Position2D.global_position
 	
