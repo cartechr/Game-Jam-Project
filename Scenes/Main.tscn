@@ -18,7 +18,6 @@ editor/display_folded = true
 [node name="Polygon2D" type="Polygon2D" parent="Wall"]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 501.779, 324.924 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -33,8 +32,16 @@ texture = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource( 1 )
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 1.2, 1 )
+limit_left = 0
+limit_top = 0
+limit_bottom = 549
+smoothing_enabled = true
+smoothing_speed = 4.0
+
 [node name="Ground" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
 editor/display_folded = true
@@ -139,4 +146,49 @@ scale = Vector2( 0.322604, 0.299461 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D7"]
+shape = SubResource( 2 )
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="Ground"]
+editor/display_folded = true
+position = Vector2( 1610, 500 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ground/StaticBody2D8"]
+position = Vector2( -0.195372, 0.288635 )
+scale = Vector2( 0.322604, 0.299461 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D8"]
+shape = SubResource( 2 )
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="Ground"]
+editor/display_folded = true
+position = Vector2( 1230, 387.394 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ground/StaticBody2D9"]
+position = Vector2( -0.195372, 0.288635 )
+scale = Vector2( 0.322604, 0.299461 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D9"]
+shape = SubResource( 2 )
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="Ground"]
+editor/display_folded = true
+position = Vector2( 1096.28, 387.394 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ground/StaticBody2D10"]
+position = Vector2( -0.195372, 0.288635 )
+scale = Vector2( 0.322604, 0.299461 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D10"]
 shape = SubResource( 2 )
