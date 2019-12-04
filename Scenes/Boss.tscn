@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
-[ext_resource path="res://Assets/IMG_0247.JPG" type="Texture" id=2]
-[ext_resource path="res://Assets/Capture2.JPG" type="Texture" id=3]
-[ext_resource path="res://Assets/ffffff-ezgif-5-93a285e69e8e-gif-jpg/frame_12_delay-0.33s - Copy.jpg" type="Texture" id=4]
-[ext_resource path="res://Assets/ffffff-ezgif-5-93a285e69e8e-gif-jpg/frame_2_delay-0.33s - Copy.jpg" type="Texture" id=5]
+[ext_resource path="res://Assets/31-ANC-A/sprite_0.png" type="Texture" id=2]
+[ext_resource path="res://Assets/31-ANC-A/sprite_1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/IMG_0247.JPG" type="Texture" id=4]
+[ext_resource path="res://Assets/Capture2.JPG" type="Texture" id=5]
 [ext_resource path="res://Assets/Game Jam song (1).wav" type="AudioStream" id=6]
 [ext_resource path="res://Scripts/AudioStreamPlayer2D.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Tile 3-1.png.png" type="Texture" id=8]
@@ -12,17 +12,17 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "attack",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [  ],
 "loop": true,
 "name": "run",
 "speed": 5.0
@@ -102,7 +102,7 @@ __meta__ = {
 position = Vector2( 8.8795, 15.3717 )
 scale = Vector2( 0.103879, 0.0781554 )
 frames = SubResource( 1 )
-animation = "attack"
+animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 8.89248, 15.372 )
@@ -466,7 +466,7 @@ shape = SubResource( 3 )
 [node name="OneWayPlatform" type="Node2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="OneWayPlatform"]
-position = Vector2( 2240, 402.511 )
+position = Vector2( 2240, 440 )
 z_index = -1
 __meta__ = {
 "_edit_group_": true
@@ -483,7 +483,7 @@ shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="OneWayPlatform"]
-position = Vector2( 2380, 264.235 )
+position = Vector2( 2380, 190 )
 z_index = -1
 __meta__ = {
 "_edit_group_": true
@@ -500,7 +500,7 @@ shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="OneWayPlatform"]
-position = Vector2( 2530, 216.275 )
+position = Vector2( 2530, 340 )
 z_index = -1
 __meta__ = {
 "_edit_group_": true
@@ -517,7 +517,7 @@ shape = SubResource( 4 )
 one_way_collision = true
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="OneWayPlatform"]
-position = Vector2( 2650, 313.214 )
+position = Vector2( 2650, 140 )
 z_index = -1
 __meta__ = {
 "_edit_group_": true

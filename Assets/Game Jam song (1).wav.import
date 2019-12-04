@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Game Jam song (1).wav-9190b045f9bf25cbe6b45365653b4c87.sample"
+path="res://.import/Game Jam song (1).wav-366de82339b90bdbb449b71f3babb3dd.sample"
 
 [deps]
 
-source_file="res://assets/Game Jam song (1).wav"
-dest_files=[ "res://.import/Game Jam song (1).wav-9190b045f9bf25cbe6b45365653b4c87.sample" ]
+source_file="res://Assets/Game Jam song (1).wav"
+dest_files=[ "res://.import/Game Jam song (1).wav-366de82339b90bdbb449b71f3babb3dd.sample" ]
 
 [params]
 
