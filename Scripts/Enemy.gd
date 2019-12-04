@@ -18,4 +18,3 @@ func dead():
 	velocity = Vector2(0, 0)
 	$AnimatedSprite.play("dead")
 	
-
