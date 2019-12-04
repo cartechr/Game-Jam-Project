@@ -42,6 +42,7 @@ func _physics_process(delta):
 			if on_ground == true:
 				velocity.y = JUMP_POWER
 				on_ground = false
+				$AnimatedSprite.play("jump")
 	if Input.is_action_just_pressed("shoot") && is_attacking == false:
 		if is_on_floor():
 			velocity.x = 0
