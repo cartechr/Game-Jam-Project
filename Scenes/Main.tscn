@@ -33,14 +33,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [  ],
-"loop": true,
-"name": "attack",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "run",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "attack",
 "speed": 5.0
 } ]
 
