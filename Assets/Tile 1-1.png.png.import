@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Monster 1.png-3b1442339223b4eddc21713bec26ff37.stex"
+path="res://.import/Tile 1-1.png.png-43cddf9441c6c853e1b3d56b46f2fd98.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/frames/Monster 1.png"
-dest_files=[ "res://.import/Monster 1.png-3b1442339223b4eddc21713bec26ff37.stex" ]
+source_file="res://Assets/Tile 1-1.png.png"
+dest_files=[ "res://.import/Tile 1-1.png.png-43cddf9441c6c853e1b3d56b46f2fd98.stex" ]
 
 [params]
 

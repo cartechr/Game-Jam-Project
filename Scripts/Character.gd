@@ -82,3 +82,7 @@ func _on_Enemy_body_entered(body):
 
 func _on_AnimatedSprite_animation_finished():
 	is_attacking = false
+
+
+func _on_Player_animation_finished():
+	pass # Replace with function body.
