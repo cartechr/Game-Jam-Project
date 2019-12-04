@@ -7,33 +7,46 @@ const FLOOR = Vector2(0, -1)
 
 const PLASMABLAST = preload("res://Scenes/PlasmaBlast.tscn")
 
+onready var World = get_node("/root/World")
+
 var velocity = Vector2()
 
 var on_ground = false
+var can_move = true
+var is_attacking = false
 
 func _physics_process(delta):
 	if Input.is_action_pressed("forward"):
-		velocity.x = SPEED
-		$AnimatedSprite.play("run")
-		$AnimatedSprite.flip_h = false
-		if sign($Position2D.position.x) == -1:
-			$Position2D.position.x *= -1
+		if is_attacking == false || is_on_floor() == false:
+			velocity.x = SPEED
+			if is_attacking == false:
+				$AnimatedSprite.play("run")
+				$AnimatedSprite.flip_h = false
+				if sign($Position2D.position.x) == -1:
+					$Position2D.position.x *= -1
 	elif Input.is_action_pressed("backward"):
-		velocity.x = -SPEED
-		$AnimatedSprite.play("run")
-		$AnimatedSprite.flip_h = true
-		if sign($Position2D.position.x) == 1:
-			$Position2D.position.x *= -1
+		if is_attacking == false || is_on_floor() == false:
+			velocity.x = -SPEED
+			if is_attacking == false:
+				$AnimatedSprite.play("run")
+				$AnimatedSprite.flip_h = true
+				if sign($Position2D.position.x) == 1:
+					$Position2D.position.x *= -1
 	else:
 		velocity.x = 0
-		if on_ground == true:
+		if on_ground == true && is_attacking == false:
 			$AnimatedSprite.play("idle")
 	
 	if Input.is_action_pressed("jump"):
-		if on_ground == true:
-			velocity.y = JUMP_POWER
-			on_ground = false
-	if Input.is_action_just_pressed("shoot"):
+		if is_attacking == false:
+			if on_ground == true:
+				velocity.y = JUMP_POWER
+				on_ground = false
+	if Input.is_action_just_pressed("shoot") && is_attacking == false:
+		if is_on_floor():
+			velocity.x = 0
+		is_attacking = true
+		$AnimatedSprite.play("attack")
 		var plasmablast = PLASMABLAST.instance()
 		if sign($Position2D.position.x) == 1:
 			plasmablast.set_plasmablast_direction(1)
@@ -45,10 +58,27 @@ func _physics_process(delta):
 	velocity.y += GRAVITY
 	
 	if is_on_floor():
+		if on_ground == false:
+			is_attacking = false
 		on_ground = true
 	else:
-		on_ground = false
+		if is_attacking == false:
+			on_ground = false
 	
 	move_and_slide(velocity, FLOOR)
+
+
 	
 	
+
+func _on_Enemy_body_entered(body):
+	if can_move:
+		World.update_lives(-1)
+		move_and_slide(velocity, Vector2.UP, true)
+		can_move = false
+	yield(get_tree().create_timer(1), "timeout")
+	can_move = true
+
+
+func _on_AnimatedSprite_animation_finished():
+	is_attacking = false

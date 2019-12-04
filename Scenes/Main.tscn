@@ -1,58 +1,57 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Capture2.JPG" type="Texture" id=2]
-[ext_resource path="res://Assets/ffffff-ezgif-5-93a285e69e8e-gif-jpg/frame_12_delay-0.33s - Copy.jpg" type="Texture" id=3]
-[ext_resource path="res://Assets/ffffff-ezgif-5-93a285e69e8e-gif-jpg/frame_2_delay-0.33s - Copy.jpg" type="Texture" id=4]
-[ext_resource path="res://Assets/Capture.jpg" type="Texture" id=5]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Assets/New_Piskel_14_ (1).ogv" type="VideoStream" id=2]
+[ext_resource path="res://Scripts/VideoPlayer.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Capture.jpg" type="Texture" id=4]
+[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Character.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Capture2.JPG" type="Texture" id=7]
+[ext_resource path="res://Assets/ffffff-ezgif-5-93a285e69e8e-gif-jpg/frame_12_delay-0.33s - Copy.jpg" type="Texture" id=8]
+[ext_resource path="res://Assets/ffffff-ezgif-5-93a285e69e8e-gif-jpg/frame_2_delay-0.33s - Copy.jpg" type="Texture" id=9]
+[ext_resource path="res://Assets/New Piskel-1.png (2).png" type="Texture" id=10]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 67.1925, 53.848 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 23.8518, 27.4681 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "run",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "attack",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 28.4988, 40.3394 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 67.1925, 53.848 )
-
-[node name="Node2D" type="Node2D"]
-
-[node name="Wall" type="StaticBody2D" parent="."]
-editor/display_folded = true
-
-[node name="Polygon2D" type="Polygon2D" parent="Wall"]
-
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 303.964, 389.75 )
+[node name="World" type="Node2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( 0.00830078, -0.178955 )
-scale = Vector2( 0.268992, 0.20672 )
-frames = SubResource( 1 )
-animation = "idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0.155579, -0.0862427 )
-shape = SubResource( 2 )
-
-[node name="Position2D" type="Position2D" parent="Player"]
-position = Vector2( 57.2655, 2.26474 )
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_left = -4.50732
+margin_top = 1.50735
+margin_right = 1019.49
+margin_bottom = 606.507
+stream = ExtResource( 2 )
+autoplay = true
+script = ExtResource( 3 )
 
 [node name="Ground" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
 editor/display_folded = true
@@ -64,9 +63,69 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D"]
 position = Vector2( -0.195372, 0.288635 )
 scale = Vector2( 0.322604, 0.299461 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2D11" type="StaticBody2D" parent="Ground"]
+editor/display_folded = true
+position = Vector2( 1097.38, 389.871 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ground/StaticBody2D11"]
+position = Vector2( -0.195372, 0.288635 )
+scale = Vector2( 0.322604, 0.299461 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D11"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2D12" type="StaticBody2D" parent="Ground"]
+editor/display_folded = true
+position = Vector2( 1603.85, 501.414 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ground/StaticBody2D12"]
+position = Vector2( -0.195372, 0.288635 )
+scale = Vector2( 0.322604, 0.299461 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D12"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="Ground"]
+editor/display_folded = true
+position = Vector2( 1471.2, 499.907 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ground/StaticBody2D13"]
+position = Vector2( -0.195372, 0.288635 )
+scale = Vector2( 0.322604, 0.299461 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D13"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="Ground"]
+editor/display_folded = true
+position = Vector2( 1340.06, 499.907 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ground/StaticBody2D14"]
+position = Vector2( -0.195372, 0.288635 )
+scale = Vector2( 0.322604, 0.299461 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D14"]
 shape = SubResource( 3 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Ground"]
@@ -79,7 +138,7 @@ __meta__ = {
 [node name="Sprite2" type="Sprite" parent="Ground/StaticBody2D2"]
 position = Vector2( -0.195374, 0.288635 )
 scale = Vector2( 0.322604, 0.299461 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D2"]
 shape = SubResource( 3 )
@@ -94,7 +153,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D3"]
 position = Vector2( -0.195372, 0.288635 )
 scale = Vector2( 0.322604, 0.299461 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D3"]
 shape = SubResource( 3 )
@@ -109,7 +168,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D4"]
 position = Vector2( -0.195372, 0.288635 )
 scale = Vector2( 0.322604, 0.299461 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D4"]
 shape = SubResource( 3 )
@@ -124,7 +183,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D5"]
 position = Vector2( -0.195372, 0.288635 )
 scale = Vector2( 0.322604, 0.299461 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D5"]
 shape = SubResource( 3 )
@@ -139,7 +198,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D8"]
 position = Vector2( -0.195372, 0.288635 )
 scale = Vector2( 0.322604, 0.299461 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D8"]
 shape = SubResource( 3 )
@@ -154,7 +213,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D9"]
 position = Vector2( -0.195372, 0.288635 )
 scale = Vector2( 0.322604, 0.299461 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D9"]
 shape = SubResource( 3 )
@@ -169,7 +228,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D10"]
 position = Vector2( -0.195372, 0.288635 )
 scale = Vector2( 0.322604, 0.299461 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D10"]
 shape = SubResource( 3 )
@@ -184,7 +243,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D6"]
 position = Vector2( -0.195372, 0.288635 )
 scale = Vector2( 0.322604, 0.299461 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D6"]
 shape = SubResource( 3 )
@@ -199,7 +258,91 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D7"]
 position = Vector2( -0.195372, 0.288635 )
 scale = Vector2( 0.322604, 0.299461 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D7"]
 shape = SubResource( 3 )
+
+[node name="Enemy" type="RigidBody2D" parent="." groups=[
+"Enemy",
+]]
+editor/display_folded = true
+position = Vector2( 829.455, 415.894 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Enemy"]
+position = Vector2( 0.108635, 0.0543366 )
+scale = Vector2( 0.250977, 0.216201 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource( 4 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 492.381, 401.809 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( 0.00830078, -0.178955 )
+scale = Vector2( 0.268992, 0.20672 )
+frames = SubResource( 1 )
+animation = "attack"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0.155579, -0.0862427 )
+scale = Vector2( 1.06753, 0.829703 )
+shape = SubResource( 2 )
+
+[node name="Position2D" type="Position2D" parent="Player"]
+position = Vector2( 57.2655, 2.26474 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_bottom = 600
+smoothing_enabled = true
+smoothing_speed = 3.0
+editor_draw_limits = true
+
+[node name="lives + etc" type="Node2D" parent="Player/Camera2D"]
+editor/display_folded = true
+position = Vector2( -1315.39, 85.0621 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Player/Camera2D/lives + etc"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="ColorRect" type="ColorRect" parent="Player/Camera2D/lives + etc"]
+margin_left = 822.0
+margin_top = 1.0
+margin_right = 1021.0
+margin_bottom = 62.0
+color = Color( 0, 0, 0, 0.25098 )
+
+[node name="Lives" type="Node2D" parent="Player/Camera2D/lives + etc"]
+
+[node name="Sprite" type="Sprite" parent="Player/Camera2D/lives + etc/Lives"]
+position = Vector2( 982.109, 33.4112 )
+scale = Vector2( 0.266447, 0.230263 )
+texture = ExtResource( 10 )
+
+[node name="Sprite2" type="Sprite" parent="Player/Camera2D/lives + etc/Lives"]
+position = Vector2( 921.057, 33.4112 )
+scale = Vector2( 0.266447, 0.230263 )
+texture = ExtResource( 10 )
+
+[node name="Sprite3" type="Sprite" parent="Player/Camera2D/lives + etc/Lives"]
+position = Vector2( 861.057, 33.4113 )
+scale = Vector2( 0.266447, 0.230263 )
+texture = ExtResource( 10 )
+[connection signal="body_entered" from="Enemy" to="Player" method="_on_Enemy_body_entered"]
+[connection signal="animation_finished" from="Player/AnimatedSprite" to="Player" method="_on_AnimatedSprite_animation_finished"]
