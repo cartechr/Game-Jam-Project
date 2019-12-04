@@ -17,6 +17,6 @@ margin_bottom = 570.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 800, 300 )
+position = Vector2( 780, 300 )
 scale = Vector2( -0.4, 0.4 )
 texture = ExtResource( 1 )
