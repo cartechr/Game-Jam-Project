@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite_2.png-5976dc31e2d2962f5da09821609a1476.stex"
+path="res://.import/sprite_2.png-581ba69cf0831281514a4970cd84c304.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/31-ANC-A Bunnyhop/sprite_2.png"
-dest_files=[ "res://.import/sprite_2.png-5976dc31e2d2962f5da09821609a1476.stex" ]
+source_file="res://Assets/31-ANC-A Bunnyhop/sprite_2.png"
+dest_files=[ "res://.import/sprite_2.png-581ba69cf0831281514a4970cd84c304.stex" ]
 
 [params]
 
