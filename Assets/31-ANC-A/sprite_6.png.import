@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite_1.png-636c6cf731024c237e2d90fe4b479b8c.stex"
+path="res://.import/sprite_6.png-ac43c257a01e201d6d8f0096dd10f02b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/31-ANC-A Walking/sprite_1.png"
-dest_files=[ "res://.import/sprite_1.png-636c6cf731024c237e2d90fe4b479b8c.stex" ]
+source_file="res://Assets/31-ANC-A/sprite_6.png"
+dest_files=[ "res://.import/sprite_6.png-ac43c257a01e201d6d8f0096dd10f02b.stex" ]
 
 [params]
 
