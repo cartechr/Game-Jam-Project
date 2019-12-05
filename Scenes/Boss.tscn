@@ -1,40 +1,42 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
-[ext_resource path="res://Assets/31-ANC-A/sprite_1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/31-ANC-A/sprite_0.png" type="Texture" id=3]
-[ext_resource path="res://Assets/31-ANC-A/sprite_7.png" type="Texture" id=4]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_0.png" type="Texture" id=5]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_2.png" type="Texture" id=6]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_4.png" type="Texture" id=7]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_3.png" type="Texture" id=8]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_0.png" type="Texture" id=9]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_1.png" type="Texture" id=10]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_2.png" type="Texture" id=11]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_00.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Game Jam song (1).wav" type="AudioStream" id=13]
-[ext_resource path="res://Scripts/AudioStreamPlayer2D.gd" type="Script" id=14]
-[ext_resource path="res://Assets/Tile 3-1.png.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Ground (Rock).JPG" type="Texture" id=16]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Character.gd" type="Script" id=2]
+[ext_resource path="res://Assets/31-ANC-A/sprite_1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/31-ANC-A/sprite_0.png" type="Texture" id=4]
+[ext_resource path="res://Assets/31-ANC-A/sprite_7.png" type="Texture" id=5]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_0.png" type="Texture" id=6]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_4.png" type="Texture" id=8]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_0.png" type="Texture" id=10]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_00.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Game Jam song (1).wav" type="AudioStream" id=14]
+[ext_resource path="res://Scripts/AudioStreamPlayer2D.gd" type="Script" id=15]
+[ext_resource path="res://Assets/Tile 3-1.png.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Ground (Rock).JPG" type="Texture" id=17]
+[ext_resource path="res://Scenes/BossEye.tscn" type="PackedScene" id=18]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "run",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": false,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "attack",
 "speed": 5.0
@@ -100,15 +102,27 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 2530, 340 ), Vector2( 2530, 190 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("BossEye:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3090, 403.644 ), Vector2( 3100, 290 ), Vector2( 3100, 420 ), Vector2( 3110, 160 ) ]
+}
 
 [node name="Boss" type="Node2D"]
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
+script = ExtResource( 1 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 80, 450 )
 scale = Vector2( 2.00441, 2.5 )
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -137,13 +151,15 @@ smoothing_speed = 3.0
 editor_draw_limits = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
-stream = ExtResource( 13 )
+stream = ExtResource( 14 )
 autoplay = true
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 
 [node name="Ground" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+editor/display_folded = true
 __meta__ = {
 "_edit_group_": true
 }
@@ -151,7 +167,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
 position = Vector2( 64.2578, 559.406 )
@@ -167,7 +183,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D11"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D11"]
 position = Vector2( 64.2578, 559.406 )
@@ -183,7 +199,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D12"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D12"]
 position = Vector2( 64.2578, 559.406 )
@@ -199,7 +215,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D15"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D15"]
 position = Vector2( 64.2578, 559.406 )
@@ -215,7 +231,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D20"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D20"]
 position = Vector2( 64.2578, 559.406 )
@@ -231,7 +247,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D23"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D23"]
 position = Vector2( 64.2578, 559.406 )
@@ -247,7 +263,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D21"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D21"]
 position = Vector2( 64.2578, 559.406 )
@@ -263,7 +279,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D18"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D18"]
 position = Vector2( 64.2578, 559.406 )
@@ -279,7 +295,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D19"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D19"]
 position = Vector2( 64.2578, 559.406 )
@@ -295,7 +311,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D16"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D16"]
 position = Vector2( 64.2578, 559.406 )
@@ -311,7 +327,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D17"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D17"]
 position = Vector2( 64.2578, 559.406 )
@@ -327,7 +343,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D13"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D13"]
 position = Vector2( 64.2578, 559.406 )
@@ -343,7 +359,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D14"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D14"]
 position = Vector2( 64.2578, 559.406 )
@@ -359,7 +375,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D2"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D2"]
 position = Vector2( 64.2578, 559.406 )
@@ -375,7 +391,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D3"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D3"]
 position = Vector2( 64.2578, 559.406 )
@@ -391,7 +407,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D4"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D4"]
 position = Vector2( 64.2578, 559.406 )
@@ -407,7 +423,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D5"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D5"]
 position = Vector2( 64.2578, 559.406 )
@@ -423,7 +439,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D6"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D6"]
 position = Vector2( 64.2578, 559.406 )
@@ -439,7 +455,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D7"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D7"]
 position = Vector2( 64.2578, 559.406 )
@@ -455,7 +471,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D8"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D8"]
 position = Vector2( 64.2578, 559.406 )
@@ -471,7 +487,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D9"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D9"]
 position = Vector2( 64.2578, 559.406 )
@@ -487,17 +503,16 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Ground/StaticBody2D10"]
 position = Vector2( 64.1264, 559.489 )
 scale = Vector2( 0.64987, 0.409803 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D10"]
 position = Vector2( 64.2578, 559.406 )
 shape = SubResource( 3 )
 
 [node name="OneWayPlatform" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="OneWayPlatform"]
-position = Vector2( 2240, 440 )
+position = Vector2( 2240, 356.244 )
 z_index = -1
 __meta__ = {
 "_edit_group_": true
@@ -506,7 +521,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="OneWayPlatform/StaticBody2D"]
 position = Vector2( 0.415527, 1.66211 )
 scale = Vector2( 0.225, 0.0707071 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OneWayPlatform/StaticBody2D"]
 position = Vector2( 0.25, 1.49663 )
@@ -514,7 +529,7 @@ rotation = 3.14159
 shape = SubResource( 4 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="OneWayPlatform"]
-position = Vector2( 2380, 190 )
+position = Vector2( 2380, 244.778 )
 z_index = -1
 __meta__ = {
 "_edit_group_": true
@@ -523,14 +538,14 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="OneWayPlatform/StaticBody2D2"]
 position = Vector2( 0.415527, 1.66211 )
 scale = Vector2( 0.225, 0.0707071 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OneWayPlatform/StaticBody2D2"]
 position = Vector2( 0.25, 1.49663 )
 shape = SubResource( 4 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="OneWayPlatform"]
-position = Vector2( 2530, 340 )
+position = Vector2( 2530, 248.704 )
 z_index = -1
 __meta__ = {
 "_edit_group_": true
@@ -539,14 +554,14 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="OneWayPlatform/StaticBody2D4"]
 position = Vector2( 0.415527, 1.66211 )
 scale = Vector2( 0.225, 0.0707071 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OneWayPlatform/StaticBody2D4"]
 position = Vector2( 0.25, 1.49663 )
 shape = SubResource( 4 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="OneWayPlatform"]
-position = Vector2( 2650, 140 )
+position = Vector2( 2650, 267.814 )
 z_index = -1
 __meta__ = {
 "_edit_group_": true
@@ -555,7 +570,7 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="OneWayPlatform/StaticBody2D3"]
 position = Vector2( 0.415527, 1.66211 )
 scale = Vector2( 0.225, 0.0707071 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OneWayPlatform/StaticBody2D3"]
 position = Vector2( 0.25, 1.49663 )
@@ -564,4 +579,8 @@ shape = SubResource( 4 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Boss"
 anims/Boss = SubResource( 5 )
+
+[node name="BossEye" parent="." instance=ExtResource( 18 )]
+position = Vector2( 3107.83, 216.493 )
+mode = 3
 [connection signal="animation_finished" from="Player/AnimatedSprite" to="Player" method="_on_AnimatedSprite_animation_finished"]

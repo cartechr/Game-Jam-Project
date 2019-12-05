@@ -89,3 +89,5 @@ func _on_AnimatedSprite_animation_finished():
 
 func _on_Player_animation_finished():
 	pass # Replace with function body.
+	
+	
