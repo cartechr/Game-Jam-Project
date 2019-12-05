@@ -8,15 +8,15 @@
 [ext_resource path="res://Assets/31-ANC-A/sprite_1.png" type="Texture" id=6]
 [ext_resource path="res://Assets/31-ANC-A/sprite_0.png" type="Texture" id=7]
 [ext_resource path="res://Assets/31-ANC-A/sprite_7.png" type="Texture" id=8]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_0.png" type="Texture" id=9]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_2.png" type="Texture" id=10]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_4.png" type="Texture" id=11]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_3.png" type="Texture" id=12]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_0.png" type="Texture" id=13]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_1.png" type="Texture" id=14]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_2.png" type="Texture" id=15]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_00.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Game Jam song (1).wav" type="AudioStream" id=17]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_00.png" type="Texture" id=9]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_0.png" type="Texture" id=10]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_4.png" type="Texture" id=12]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_3.png" type="Texture" id=13]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_0.png" type="Texture" id=14]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_2.png" type="Texture" id=16]
+[ext_resource path="res://assets/Game Jam song real.wav" type="AudioStream" id=17]
 [ext_resource path="res://Scripts/AudioStreamPlayer2D.gd" type="Script" id=18]
 [ext_resource path="res://Assets/Capture.jpg" type="Texture" id=19]
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=20]
@@ -45,19 +45,19 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "run",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": false,
 "name": "jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "attack",
 "speed": 5.0
 } ]
 
@@ -191,6 +191,7 @@ scale = Vector2( 0.3125, 0.386364 )
 texture = ExtResource( 3 )
 
 [node name="Telephone Poll" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Telephone poll" type="Sprite" parent="Telephone Poll"]
 position = Vector2( 1933.3, 204.858 )
@@ -232,6 +233,7 @@ position = Vector2( 68.5581, 4.96552 )
 current = true
 limit_left = 0
 limit_top = 0
+limit_right = 13210
 limit_bottom = 600
 smoothing_enabled = true
 smoothing_speed = 3.0
@@ -311,12 +313,18 @@ animation = "Run"
 shape = SubResource( 6 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="lives + etc" type="Node2D" parent="CanvasLayer"]
+editor/display_folded = true
 position = Vector2( -824.515, -1.50726 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Label" type="Label" parent="CanvasLayer/lives + etc"]
+margin_right = 40.0
+margin_bottom = 14.0
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/lives + etc"]
 margin_left = 822.0
@@ -326,6 +334,7 @@ margin_bottom = 62.0
 color = Color( 0, 0, 0, 0.25098 )
 
 [node name="Lives" type="Node2D" parent="CanvasLayer/lives + etc"]
+editor/display_folded = true
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/lives + etc/Lives"]
 position = Vector2( 982.109, 33.4112 )
@@ -354,7 +363,6 @@ autoplay = true
 script = ExtResource( 23 )
 
 [node name="Ground2" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
 editor/display_folded = true
@@ -688,7 +696,8 @@ shape = SubResource( 7 )
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="Ground2"]
 editor/display_folded = true
-position = Vector2( -130, 510 )
+position = Vector2( 13158.8, 443.918 )
+rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
 }
@@ -700,6 +709,9 @@ texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/StaticBody2D9"]
 shape = SubResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Rock walls" type="Node2D" parent="."]
 editor/display_folded = true
@@ -1971,6 +1983,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block37" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2974.78, 356.751 )
 __meta__ = {
 "_edit_group_": true
@@ -3013,7 +3026,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block64" type="StaticBody2D" parent="."]
-position = Vector2( 6647.36, 452.199 )
+position = Vector2( 6647.38, 453.695 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -3342,7 +3355,7 @@ scale = Vector2( 0.143172, 0.146795 )
 texture = ExtResource( 33 )
 
 [node name="Rock" type="Sprite" parent="."]
-position = Vector2( 6631.76, 384.255 )
+position = Vector2( 6632.5, 385.359 )
 texture = ExtResource( 29 )
 
 [node name="Real building" type="Sprite" parent="."]
