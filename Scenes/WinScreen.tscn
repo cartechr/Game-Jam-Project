@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/W9k1.ogv" type="VideoStream" id=1]
 [ext_resource path="res://Scenes/VideoPlayer.gd" type="Script" id=2]
 [ext_resource path="res://Assets/YOU-WIN.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/Button.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/Button2.gd" type="Script" id=5]
 
 [node name="WinScreen" type="CanvasLayer"]
 
@@ -29,44 +27,3 @@ margin_right = 1024.0
 margin_bottom = 600.0
 texture = ExtResource( 3 )
 stretch_mode = 4
-
-[node name="Game Over" type="Node2D" parent="."]
-script = ExtResource( 4 )
-
-[node name="Button" type="Button" parent="Game Over"]
-margin_left = 103.0
-margin_top = 436.0
-margin_right = 404.0
-margin_bottom = 542.0
-
-[node name="Label" type="Label" parent="Game Over"]
-margin_left = 101.0
-margin_top = 421.0
-margin_right = 411.0
-margin_bottom = 565.0
-text = "Play Again"
-align = 1
-valign = 1
-uppercase = true
-
-[node name="Credits" type="Node2D" parent="."]
-script = ExtResource( 5 )
-
-[node name="Button" type="Button" parent="Credits"]
-margin_left = 545.99
-margin_top = 435.67
-margin_right = 873.99
-margin_bottom = 545.67
-
-[node name="Label" type="Label" parent="Credits"]
-margin_left = 544.142
-margin_top = 409.084
-margin_right = 886.142
-margin_bottom = 590.084
-text = "Credits
-"
-align = 1
-valign = 1
-uppercase = true
-[connection signal="pressed" from="Game Over/Button" to="Game Over" method="_on_Button_pressed"]
-[connection signal="pressed" from="Credits/Button" to="Credits" method="_on_Button_pressed"]
