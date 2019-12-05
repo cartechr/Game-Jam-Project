@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Assets/Tile 3-1.png.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Ground (Rock).JPG" type="Texture" id=17]
 [ext_resource path="res://Scenes/BossEye.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Assets/New Piskel-1.png (2).png" type="Texture" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -510,8 +511,10 @@ position = Vector2( 64.2578, 559.406 )
 shape = SubResource( 3 )
 
 [node name="OneWayPlatform" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="OneWayPlatform"]
+editor/display_folded = true
 position = Vector2( 2240, 356.244 )
 z_index = -1
 __meta__ = {
@@ -583,4 +586,34 @@ anims/Boss = SubResource( 5 )
 [node name="BossEye" parent="." instance=ExtResource( 18 )]
 position = Vector2( 3107.83, 216.493 )
 mode = 3
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="Node2D" type="Node2D" parent="CanvasLayer"]
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/Node2D"]
+position = Vector2( -157.01, -11.899 )
+scale = Vector2( 0.261936, 0.20954 )
+texture = ExtResource( 19 )
+offset = Vector2( 751.425, 208.38 )
+
+[node name="Sprite2" type="Sprite" parent="CanvasLayer/Node2D"]
+position = Vector2( -24.7069, 68.3783 )
+scale = Vector2( 0.261936, 0.20954 )
+texture = ExtResource( 19 )
+offset = Vector2( 486.844, -174.733 )
+
+[node name="Sprite3" type="Sprite" parent="CanvasLayer/Node2D"]
+position = Vector2( 37.2931, 68.3783 )
+scale = Vector2( 0.261936, 0.20954 )
+texture = ExtResource( 19 )
+offset = Vector2( 486.844, -174.733 )
 [connection signal="animation_finished" from="Player/AnimatedSprite" to="Player" method="_on_AnimatedSprite_animation_finished"]
