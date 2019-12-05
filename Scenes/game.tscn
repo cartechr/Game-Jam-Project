@@ -312,18 +312,12 @@ animation = "Run"
 shape = SubResource( 6 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="lives + etc" type="Node2D" parent="CanvasLayer"]
-editor/display_folded = true
 position = Vector2( -824.515, -1.50726 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="Label" type="Label" parent="CanvasLayer/lives + etc"]
-margin_right = 40.0
-margin_bottom = 14.0
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/lives + etc"]
 margin_left = 822.0
@@ -333,7 +327,6 @@ margin_bottom = 62.0
 color = Color( 0, 0, 0, 0.25098 )
 
 [node name="Lives" type="Node2D" parent="CanvasLayer/lives + etc"]
-editor/display_folded = true
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/lives + etc/Lives"]
 position = Vector2( 982.109, 33.4112 )
@@ -710,6 +703,7 @@ texture = ExtResource( 24 )
 shape = SubResource( 7 )
 
 [node name="Rock walls" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="rock wall" type="StaticBody2D" parent="Rock walls"]
 editor/display_folded = true
