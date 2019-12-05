@@ -4,14 +4,14 @@
 [ext_resource path="res://Assets/31-ANC-A/sprite_1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/31-ANC-A/sprite_0.png" type="Texture" id=3]
 [ext_resource path="res://Assets/31-ANC-A/sprite_7.png" type="Texture" id=4]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_00.png" type="Texture" id=5]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_0.png" type="Texture" id=6]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_2.png" type="Texture" id=7]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_4.png" type="Texture" id=8]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_3.png" type="Texture" id=9]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_0.png" type="Texture" id=10]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_1.png" type="Texture" id=11]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_0.png" type="Texture" id=5]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_2.png" type="Texture" id=6]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_4.png" type="Texture" id=7]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_3.png" type="Texture" id=8]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_0.png" type="Texture" id=9]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_00.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Game Jam song (1).wav" type="AudioStream" id=13]
 [ext_resource path="res://Scripts/AudioStreamPlayer2D.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Tile 3-1.png.png" type="Texture" id=15]
@@ -24,19 +24,19 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "attack",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "run",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": false,
 "name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "attack",
 "speed": 5.0
 } ]
 
@@ -106,7 +106,6 @@ tracks/3/keys = {
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 
 [node name="Player" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 80, 450 )
 scale = Vector2( 2.00441, 2.5 )
 script = ExtResource( 1 )
@@ -131,7 +130,7 @@ position = Vector2( 38.7155, 14.2551 )
 current = true
 limit_left = 0
 limit_top = 0
-limit_right = 3080
+limit_right = 3205
 limit_bottom = 600
 smoothing_enabled = true
 smoothing_speed = 3.0
@@ -143,7 +142,6 @@ autoplay = true
 script = ExtResource( 14 )
 
 [node name="Ground" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
 __meta__ = {
@@ -220,6 +218,22 @@ scale = Vector2( 0.64987, 0.409803 )
 texture = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D20"]
+position = Vector2( 64.2578, 559.406 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="Ground"]
+editor/display_folded = true
+position = Vector2( 3080, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Ground/StaticBody2D23"]
+position = Vector2( 64.1264, 559.489 )
+scale = Vector2( 0.64987, 0.409803 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D23"]
 position = Vector2( 64.2578, 559.406 )
 shape = SubResource( 3 )
 
