@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
 [ext_resource path="res://Assets/31-ANC-A/sprite_1.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Scripts/AudioStreamPlayer2D.gd" type="Script" id=14]
 [ext_resource path="res://Assets/Tile 3-1.png.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Ground (Rock).JPG" type="Texture" id=16]
+[ext_resource path="res://Scenes/BossEye.tscn" type="PackedScene" id=17]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -100,10 +101,20 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( 2530, 340 ), Vector2( 2530, 190 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("BossEye:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3090, 403.644 ), Vector2( 3100, 290 ), Vector2( 3100, 420 ), Vector2( 3110, 160 ) ]
+}
 
 [node name="Boss" type="Node2D"]
-
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 80, 450 )
@@ -494,10 +505,9 @@ position = Vector2( 64.2578, 559.406 )
 shape = SubResource( 3 )
 
 [node name="OneWayPlatform" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="OneWayPlatform"]
-position = Vector2( 2240, 440 )
+position = Vector2( 2240, 356.244 )
 z_index = -1
 __meta__ = {
 "_edit_group_": true
@@ -514,7 +524,7 @@ rotation = 3.14159
 shape = SubResource( 4 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="OneWayPlatform"]
-position = Vector2( 2380, 190 )
+position = Vector2( 2380, 244.778 )
 z_index = -1
 __meta__ = {
 "_edit_group_": true
@@ -530,7 +540,7 @@ position = Vector2( 0.25, 1.49663 )
 shape = SubResource( 4 )
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="OneWayPlatform"]
-position = Vector2( 2530, 340 )
+position = Vector2( 2530, 248.704 )
 z_index = -1
 __meta__ = {
 "_edit_group_": true
@@ -546,7 +556,7 @@ position = Vector2( 0.25, 1.49663 )
 shape = SubResource( 4 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="OneWayPlatform"]
-position = Vector2( 2650, 140 )
+position = Vector2( 2650, 267.814 )
 z_index = -1
 __meta__ = {
 "_edit_group_": true
@@ -564,4 +574,8 @@ shape = SubResource( 4 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Boss"
 anims/Boss = SubResource( 5 )
+
+[node name="BossEye" parent="." instance=ExtResource( 17 )]
+position = Vector2( 3107.83, 216.493 )
+mode = 3
 [connection signal="animation_finished" from="Player/AnimatedSprite" to="Player" method="_on_AnimatedSprite_animation_finished"]
