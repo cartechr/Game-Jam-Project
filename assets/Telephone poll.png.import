@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Telephone poll.png-6b59acda6ad75f309facffb71dbc4582.stex"
+path="res://.import/Telephone poll.png-6282d954814f97790dcd1701161596f5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Telephone poll.png"
-dest_files=[ "res://.import/Telephone poll.png-6b59acda6ad75f309facffb71dbc4582.stex" ]
+source_file="res://Assets/Telephone poll.png"
+dest_files=[ "res://.import/Telephone poll.png-6282d954814f97790dcd1701161596f5.stex" ]
 
 [params]
 
