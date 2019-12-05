@@ -8,15 +8,15 @@
 [ext_resource path="res://Assets/31-ANC-A/sprite_1.png" type="Texture" id=6]
 [ext_resource path="res://Assets/31-ANC-A/sprite_0.png" type="Texture" id=7]
 [ext_resource path="res://Assets/31-ANC-A/sprite_7.png" type="Texture" id=8]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_0.png" type="Texture" id=9]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_2.png" type="Texture" id=10]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_4.png" type="Texture" id=11]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_3.png" type="Texture" id=12]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_0.png" type="Texture" id=13]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_1.png" type="Texture" id=14]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_2.png" type="Texture" id=15]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_00.png" type="Texture" id=16]
-[ext_resource path="res://Assets/Game Jam song (1).wav" type="AudioStream" id=17]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_00.png" type="Texture" id=9]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_0.png" type="Texture" id=10]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_4.png" type="Texture" id=12]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_3.png" type="Texture" id=13]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_0.png" type="Texture" id=14]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_1.png" type="Texture" id=15]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_2.png" type="Texture" id=16]
+[ext_resource path="res://assets/Game Jam song real.wav" type="AudioStream" id=17]
 [ext_resource path="res://Scripts/AudioStreamPlayer2D.gd" type="Script" id=18]
 [ext_resource path="res://Assets/Capture.jpg" type="Texture" id=19]
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=20]
@@ -45,19 +45,19 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "run",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": false,
 "name": "jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "attack",
 "speed": 5.0
 } ]
 
@@ -297,7 +297,6 @@ shape = SubResource( 4 )
 [node name="Enemy" type="RigidBody2D" parent="." groups=[
 "Enemy",
 ]]
-editor/display_folded = true
 position = Vector2( -80.1822, 142.456 )
 script = ExtResource( 20 )
 __meta__ = {
@@ -3027,7 +3026,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block64" type="StaticBody2D" parent="."]
-position = Vector2( 6647.36, 452.199 )
+position = Vector2( 6647.38, 453.695 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -3356,7 +3355,7 @@ scale = Vector2( 0.143172, 0.146795 )
 texture = ExtResource( 33 )
 
 [node name="Rock" type="Sprite" parent="."]
-position = Vector2( 6631.76, 384.255 )
+position = Vector2( 6632.5, 385.359 )
 texture = ExtResource( 29 )
 
 [node name="Real building" type="Sprite" parent="."]

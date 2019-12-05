@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Game Jam song real.wav-f405f3f8436669dcdd64815b126122ad.sample"
+
+[deps]
+
+source_file="res://Assets/Game Jam song real.wav"
+dest_files=[ "res://.import/Game Jam song real.wav-f405f3f8436669dcdd64815b126122ad.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
