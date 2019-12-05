@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite_2.png-9eb88a454af9726fa196ff0253d6a852.stex"
+path="res://.import/sprite_2.png-ba9999526fd7949bfd0b7d67b2d5e993.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Bun Blaster Charging/sprite_2.png"
-dest_files=[ "res://.import/sprite_2.png-9eb88a454af9726fa196ff0253d6a852.stex" ]
+source_file="res://assets/Bun Blaster Charging/sprite_2.png"
+dest_files=[ "res://.import/sprite_2.png-ba9999526fd7949bfd0b7d67b2d5e993.stex" ]
 
 [params]
 
