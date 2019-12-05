@@ -191,6 +191,7 @@ scale = Vector2( 0.3125, 0.386364 )
 texture = ExtResource( 3 )
 
 [node name="Telephone Poll" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Telephone poll" type="Sprite" parent="Telephone Poll"]
 position = Vector2( 1933.3, 204.858 )
@@ -232,6 +233,7 @@ position = Vector2( 68.5581, 4.96552 )
 current = true
 limit_left = 0
 limit_top = 0
+limit_right = 13210
 limit_bottom = 600
 smoothing_enabled = true
 smoothing_speed = 3.0
@@ -362,7 +364,6 @@ autoplay = true
 script = ExtResource( 23 )
 
 [node name="Ground2" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
 editor/display_folded = true
@@ -696,7 +697,8 @@ shape = SubResource( 7 )
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="Ground2"]
 editor/display_folded = true
-position = Vector2( -130, 510 )
+position = Vector2( 13158.8, 443.918 )
+rotation = 1.5708
 __meta__ = {
 "_edit_group_": true
 }
@@ -708,8 +710,12 @@ texture = ExtResource( 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/StaticBody2D9"]
 shape = SubResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Rock walls" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="rock wall" type="StaticBody2D" parent="Rock walls"]
 editor/display_folded = true
@@ -1978,6 +1984,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block37" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2974.78, 356.751 )
 __meta__ = {
 "_edit_group_": true
