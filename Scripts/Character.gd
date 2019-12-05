@@ -65,6 +65,8 @@ func _physics_process(delta):
 	else:
 		if is_attacking == false:
 			on_ground = false
+	 if position.y > get_viewport_rect().end.y:
+			get_tree().change_scene("res://Scenes/YouLose.tscn")
 	
 	move_and_slide(velocity, FLOOR)
 

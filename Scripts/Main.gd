@@ -25,5 +25,7 @@ func update_lives(delta):
 			Hearts[h].texture = heart_empty
 		if lives == (h*2)+1:
 			Hearts[h].texture = heart_half
+			
+
 	
 
