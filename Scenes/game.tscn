@@ -297,7 +297,6 @@ shape = SubResource( 4 )
 [node name="Enemy" type="RigidBody2D" parent="." groups=[
 "Enemy",
 ]]
-editor/display_folded = true
 position = Vector2( -80.1822, 142.456 )
 script = ExtResource( 20 )
 __meta__ = {
