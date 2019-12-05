@@ -27,3 +27,5 @@ margin_right = 1024.0
 margin_bottom = 600.0
 texture = ExtResource( 3 )
 stretch_mode = 4
+
+[node name="Node2D" type="Node2D" parent="."]
