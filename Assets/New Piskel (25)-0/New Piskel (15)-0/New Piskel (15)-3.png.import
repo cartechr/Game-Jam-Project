@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/New Piskel (15)-3.png-eb2e105cef5076eb3f45ec582b361d7d.stex"
+path="res://.import/New Piskel (15)-3.png-1685e17d26b3f092ea3ddad49ec6ac24.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/New Piskel (25)-0/New Piskel (15)-0/New Piskel (15)-3.png"
-dest_files=[ "res://.import/New Piskel (15)-3.png-eb2e105cef5076eb3f45ec582b361d7d.stex" ]
+source_file="res://assets/New Piskel (25)-0/New Piskel (15)-0/New Piskel (15)-3.png"
+dest_files=[ "res://.import/New Piskel (15)-3.png-1685e17d26b3f092ea3ddad49ec6ac24.stex" ]
 
 [params]
 
