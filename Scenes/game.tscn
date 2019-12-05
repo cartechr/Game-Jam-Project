@@ -247,7 +247,6 @@ attenuation = 0.353553
 script = ExtResource( 18 )
 
 [node name="Ground" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody2D12" type="StaticBody2D" parent="Ground"]
 editor/display_folded = true
