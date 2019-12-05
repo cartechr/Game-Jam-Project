@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Title Screen-1.png.png" type="Texture" id=1]
 [ext_resource path="res://Assets/gasfont.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Scenes/Instruction Button.gd" type="Script" id=3]
-[ext_resource path="res://Assets/Spike.png" type="Texture" id=4]
-[ext_resource path="res://Assets/frames/Monster 1.png" type="Texture" id=5]
-[ext_resource path="res://Assets/31-ANC-A/sprite_2.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Bun Charge Shot/sprite_0.png" type="Texture" id=7]
+[ext_resource path="res://Assets/year_is_199x.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scenes/Instruction Button.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Spike.png" type="Texture" id=5]
+[ext_resource path="res://Assets/frames/Monster 1.png" type="Texture" id=6]
+[ext_resource path="res://Assets/31-ANC-A/sprite_2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Bun Charge Shot/sprite_0.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -15,10 +16,10 @@ outline_color = Color( 0.0588235, 0.988235, 0.0117647, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 30
+size = 50
 outline_size = 1
-outline_color = Color( 0.0588235, 0.988235, 0.0117647, 1 )
-font_data = ExtResource( 2 )
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -55,7 +56,7 @@ margin_top = 50.0
 margin_right = 1210.0
 margin_bottom = 490.0
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0.0588235, 0.988235, 0.0117647, 1 )
 text = ". Defeat all the enemies to advance!
 
 . Be wary of spikes!
@@ -67,7 +68,7 @@ text = ". Defeat all the enemies to advance!
 valign = 1
 
 [node name="Node2D" type="Node2D" parent="."]
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="Button" type="Button" parent="Node2D"]
 margin_left = 600.0
@@ -88,24 +89,24 @@ align = 1
 valign = 1
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 460, 220 )
+position = Vector2( 470, 220 )
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 4 )
-
-[node name="Sprite3" type="Sprite" parent="."]
-position = Vector2( 570, 160 )
-scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 
-[node name="Sprite4" type="Sprite" parent="."]
-position = Vector2( 410, 290 )
-scale = Vector2( 0.2, 0.2 )
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 600, 160 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 
-[node name="sprite_0" type="Sprite" parent="Sprite4"]
-position = Vector2( 500, 330 )
-scale = Vector2( 0.5, 0.5 )
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 450, 280 )
+scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 7 )
 
 [node name="Sprite5" type="Sprite" parent="."]
+
+[node name="sprite_0" type="Sprite" parent="."]
+position = Vector2( 510, 340 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 8 )
 [connection signal="pressed" from="Node2D/Button" to="Node2D" method="_on_Button_pressed"]

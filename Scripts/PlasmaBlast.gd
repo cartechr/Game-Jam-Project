@@ -13,19 +13,14 @@ func set_plasmablast_direction(dir):
 		$AnimatedSprite.flip_h = true
 
 func _physics_process(delta):
-	velocity.x = SPEED * delta * direction
+	pass
+	queue_free()
 	translate(velocity)
+	velocity.x = SPEED * delta * direction
 	$AnimatedSprite.play("shoot")
   
 	
 	
 
 func _on_VisibilityNotifier2D_screen_exited():
-	queue_free()
-
-
-
-func _on_PlasmaBlast_body_entered(body):
-	if "Enemy" in body.name:
-		body.dead()
 	queue_free()

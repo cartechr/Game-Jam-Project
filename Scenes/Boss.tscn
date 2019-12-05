@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=2]
@@ -18,6 +18,8 @@
 [ext_resource path="res://Assets/Tile 3-1.png.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Ground (Rock).JPG" type="Texture" id=17]
 [ext_resource path="res://Scenes/BossEye.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scripts/Lose Screen.gd" type="Script" id=19]
+[ext_resource path="res://Scripts/Win Screen.gd" type="Script" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -156,10 +158,8 @@ autoplay = true
 script = ExtResource( 15 )
 
 [node name="Ground" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
-editor/display_folded = true
 __meta__ = {
 "_edit_group_": true
 }
@@ -583,4 +583,53 @@ anims/Boss = SubResource( 5 )
 [node name="BossEye" parent="." instance=ExtResource( 18 )]
 position = Vector2( 3107.83, 216.493 )
 mode = 3
+
+[node name="Lose Screen" type="Node2D" parent="."]
+position = Vector2( 2970, 50 )
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button" type="Button" parent="Lose Screen"]
+margin_left = -200.0
+margin_top = 180.0
+margin_right = 40.0
+margin_bottom = 290.0
+
+[node name="Label" type="Label" parent="Lose Screen"]
+margin_left = -200.0
+margin_top = 180.0
+margin_right = 40.0
+margin_bottom = 300.0
+text = "Lose Screen
+
+"
+align = 1
+valign = 1
+
+[node name="Win Screen" type="Node2D" parent="."]
+position = Vector2( 2510, -290 )
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button" type="Button" parent="Win Screen"]
+margin_left = 250.0
+margin_top = 315.0
+margin_right = 494.0
+margin_bottom = 416.0
+
+[node name="Label" type="Label" parent="Win Screen"]
+margin_left = 242.0
+margin_top = 315.0
+margin_right = 500.0
+margin_bottom = 425.0
+text = "Win Screen
+"
+align = 1
+valign = 1
 [connection signal="animation_finished" from="Player/AnimatedSprite" to="Player" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="pressed" from="Lose Screen/Button" to="Lose Screen" method="_on_Button_pressed"]
+[connection signal="pressed" from="Win Screen/Button" to="Win Screen" method="_on_Button_pressed"]

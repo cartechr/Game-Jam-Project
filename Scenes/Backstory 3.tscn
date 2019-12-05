@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Title Screen-1.png.png" type="Texture" id=1]
 [ext_resource path="res://Assets/gasfont.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Scenes/Backstory Button 3.gd" type="Script" id=3]
+[ext_resource path="res://Assets/year_is_199x.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scenes/Backstory Button 3.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -11,10 +12,10 @@ outline_color = Color( 0.0588235, 0.988235, 0.0117647, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 30
+size = 50
 outline_size = 1
-outline_color = Color( 0.0588235, 0.988235, 0.0117647, 1 )
-font_data = ExtResource( 2 )
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -46,12 +47,12 @@ align = 1
 valign = 1
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 50.0
-margin_top = 30.0
-margin_right = 990.0
-margin_bottom = 470.0
+margin_left = 40.0
+margin_top = 60.0
+margin_right = 980.0
+margin_bottom = 500.0
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 1, 0.0156863, 1 )
 text = "31-ANC-A was then created
 in hopes to find supplies and a new sanctuary for human civilization
 with her trusty plasma blaster.
@@ -62,7 +63,7 @@ align = 1
 valign = 1
 
 [node name="Node2D" type="Node2D" parent="."]
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="Button" type="Button" parent="Node2D"]
 margin_left = 600.0
