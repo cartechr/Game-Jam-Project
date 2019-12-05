@@ -6,6 +6,6 @@
 
 [node name="VideoPlayer" type="VideoPlayer" parent="."]
 margin_right = 1024.0
-margin_bottom = 626.0
+margin_bottom = 604.0
 stream = ExtResource( 1 )
 autoplay = true

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dead bush.png-ecd20452f4c3d1884ace0dae4b02d5c9.stex"
+path="res://.import/Dead bush.png-3daea36a2424444306e596775327f344.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Dead bush.png"
-dest_files=[ "res://.import/Dead bush.png-ecd20452f4c3d1884ace0dae4b02d5c9.stex" ]
+source_file="res://assets/Dead bush.png"
+dest_files=[ "res://.import/Dead bush.png-3daea36a2424444306e596775327f344.stex" ]
 
 [params]
 
