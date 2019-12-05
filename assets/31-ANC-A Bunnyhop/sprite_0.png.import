@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Grass 2.png-fcecd1b726cf7c232d2cd0ce36c814e8.stex"
+path="res://.import/sprite_0.png-08ceac2f361d87feda011b45745a2d77.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/blowing grass/Grass 2.png"
-dest_files=[ "res://.import/Grass 2.png-fcecd1b726cf7c232d2cd0ce36c814e8.stex" ]
+source_file="res://assets/31-ANC-A Bunnyhop/sprite_0.png"
+dest_files=[ "res://.import/sprite_0.png-08ceac2f361d87feda011b45745a2d77.stex" ]
 
 [params]
 
