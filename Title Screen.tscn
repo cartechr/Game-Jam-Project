@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Assets/IMG_0247.JPG" type="Texture" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1020.0
+margin_bottom = 600.0
+color = Color( 0.541176, 0.541176, 0.541176, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 60.0
+margin_top = 30.0
+margin_right = 960.0
+margin_bottom = 570.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 780, 300 )
+scale = Vector2( -0.4, 0.4 )
+texture = ExtResource( 1 )
