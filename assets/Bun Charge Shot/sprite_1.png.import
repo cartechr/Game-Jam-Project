@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite_1.png-d264d13425e36cf179da9297be5f97ae.stex"
+path="res://.import/sprite_1.png-84b1da66cf6cb6dc3908538a84b07a0e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Bun Charge Shot/sprite_1.png"
-dest_files=[ "res://.import/sprite_1.png-d264d13425e36cf179da9297be5f97ae.stex" ]
+source_file="res://Assets/Bun Charge Shot/sprite_1.png"
+dest_files=[ "res://.import/sprite_1.png-84b1da66cf6cb6dc3908538a84b07a0e.stex" ]
 
 [params]
 
