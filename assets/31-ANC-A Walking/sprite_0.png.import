@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ground (Rock).JPG-8cb069443b62f6d3a7a5f32a20357e07.stex"
+path="res://.import/sprite_0.png-8b6d27ef70d1f837643010dd9bfd3161.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ground (Rock).JPG"
-dest_files=[ "res://.import/Ground (Rock).JPG-8cb069443b62f6d3a7a5f32a20357e07.stex" ]
+source_file="res://assets/31-ANC-A Walking/sprite_0.png"
+dest_files=[ "res://.import/sprite_0.png-8b6d27ef70d1f837643010dd9bfd3161.stex" ]
 
 [params]
 
