@@ -16,7 +16,10 @@ _global_script_class_icons={
 [application]
 
 config/name="Ball Bounce"
+<<<<<<< HEAD
+=======
 run/main_scene="res://Scenes/game.tscn"
+>>>>>>> 5ebabdcdf58df99347e27c6db55d5741de729153
 config/icon="res://icon.png"
 
 [display]
