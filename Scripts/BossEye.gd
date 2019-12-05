@@ -1,17 +1,16 @@
 extends RigidBody2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-# Called when the node enters the scene tree for the first time.
+var BLAST = preload("res://Scenes/EnemyBlast.tscn")
+
+
 func _ready():
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_Timer_ready():
 	$AnimatedSprite.play("Boss")
+
+
+func _on_Timer_timeout():
+	if rand_range(0,1) > 0.8:
+		var blast = BLAST.instance()
+		blast.set_plasmablast_direction(-1)
+		get_parent().add_child(blast)
+		blast.position = $Position2D.global_position

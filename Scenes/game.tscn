@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=2]
@@ -15,10 +15,10 @@
 [ext_resource path="res://Assets/31-ANC-A Walking/sprite_2.png" type="Texture" id=13]
 [ext_resource path="res://Assets/31-ANC-A Walking/sprite_4.png" type="Texture" id=14]
 [ext_resource path="res://Assets/31-ANC-A Walking/sprite_3.png" type="Texture" id=15]
-[ext_resource path="res://Assets/sprite_0.png" type="Texture" id=16]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_1.png" type="Texture" id=17]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_2.png" type="Texture" id=18]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_00.png" type="Texture" id=19]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_00.png" type="Texture" id=16]
+[ext_resource path="res://Assets/sprite_0.png" type="Texture" id=17]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_1.png" type="Texture" id=18]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_2.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Game Jam song (1).wav" type="AudioStream" id=20]
 [ext_resource path="res://Scripts/AudioStreamPlayer2D.gd" type="Script" id=21]
 [ext_resource path="res://Assets/Capture.jpg" type="Texture" id=22]
@@ -51,6 +51,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CanvasItemMaterial" id=11]
+blend_mode = 3
+
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 27.6961, 45.24 )
 
@@ -69,14 +72,14 @@ animations = [ {
 "name": "run",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 16 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
-"loop": false,
-"name": "jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ) ],
+"frames": [ ExtResource( 16 ) ],
 "loop": true,
 "name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": false,
+"name": "jump",
 "speed": 5.0
 } ]
 
@@ -157,14 +160,20 @@ extents = Vector2( 47.9736, 32.4746 )
 script = ExtResource( 1 )
 
 [node name="enemies" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Enemy" type="RigidBody2D" parent="enemies" groups=[
 "Enemy",
 ]]
-editor/display_folded = true
 position = Vector2( 754.818, 453.092 )
-mode = 1
+mode = 3
+contacts_reported = 4
+contact_monitor = true
+can_sleep = false
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="AnimatedSprite" parent="enemies/Enemy"]
 position = Vector2( 8.33203, -8.5918 )
@@ -173,7 +182,9 @@ frames = SubResource( 1 )
 animation = "animate"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemies/Enemy"]
-position = Vector2( 0.554749, 3.88345 )
+material = SubResource( 11 )
+position = Vector2( 0.554626, 3.88345 )
+scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
 [node name="House" type="Node2D" parent="."]
@@ -364,6 +375,7 @@ scale = Vector2( 0.266447, 0.230263 )
 texture = ExtResource( 23 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="VideoPlayer" type="VideoPlayer" parent="ParallaxBackground"]
 margin_left = -0.226135
@@ -723,6 +735,7 @@ texture = ExtResource( 26 )
 shape = SubResource( 7 )
 
 [node name="Rock walls" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="rock wall" type="StaticBody2D" parent="Rock walls"]
 editor/display_folded = true
@@ -1991,6 +2004,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block37" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2974.78, 356.751 )
 __meta__ = {
 "_edit_group_": true
@@ -2358,6 +2372,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block58" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 7028.06, 549.019 )
 __meta__ = {
 "_edit_group_": true
@@ -2373,6 +2388,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block78" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 7789.46, 550.481 )
 __meta__ = {
 "_edit_group_": true
@@ -2388,6 +2404,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block41" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2974.78, 549.825 )
 __meta__ = {
 "_edit_group_": true
@@ -2403,6 +2420,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block2" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2807.2, -188.807 )
 __meta__ = {
 "_edit_group_": true
@@ -2418,6 +2436,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block19" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1941.62, -247.698 )
 __meta__ = {
 "_edit_group_": true
@@ -2433,6 +2452,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block42" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 3480.22, -272.422 )
 __meta__ = {
 "_edit_group_": true
@@ -2448,6 +2468,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block48" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 4481.93, 319.841 )
 __meta__ = {
 "_edit_group_": true
@@ -2463,6 +2484,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block10" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1707.45, 355.533 )
 __meta__ = {
 "_edit_group_": true
@@ -2478,6 +2500,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block27" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2923.2, -470.83 )
 __meta__ = {
 "_edit_group_": true
@@ -2493,6 +2516,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block13" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1717.26, -355.92 )
 __meta__ = {
 "_edit_group_": true
@@ -2508,6 +2532,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block57" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 4523.76, -503.789 )
 __meta__ = {
 "_edit_group_": true
@@ -2523,6 +2548,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block72" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 7535.66, 453.664 )
 __meta__ = {
 "_edit_group_": true
@@ -2538,6 +2564,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block25" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 3210.6, -110.75 )
 __meta__ = {
 "_edit_group_": true
@@ -2553,6 +2580,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block59" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 6014.55, -493.191 )
 __meta__ = {
 "_edit_group_": true
@@ -2568,6 +2596,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block77" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 10940.8, 807.391 )
 __meta__ = {
 "_edit_group_": true
@@ -2583,6 +2612,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block16" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1745.82, 922.876 )
 __meta__ = {
 "_edit_group_": true
@@ -2598,6 +2628,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block60" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 6773.41, 550.583 )
 __meta__ = {
 "_edit_group_": true
@@ -2613,6 +2644,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block31" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2214.19, 550.116 )
 __meta__ = {
 "_edit_group_": true
@@ -2628,6 +2660,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block53" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 7563.98, 772.001 )
 __meta__ = {
 "_edit_group_": true
@@ -2643,6 +2676,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block67" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 8061.51, -437.953 )
 __meta__ = {
 "_edit_group_": true
@@ -2658,6 +2692,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block4" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2385.44, -430.964 )
 __meta__ = {
 "_edit_group_": true
@@ -2673,6 +2708,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block23" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2177.02, -244.646 )
 __meta__ = {
 "_edit_group_": true
@@ -2688,6 +2724,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block55" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 7028.06, 453.685 )
 __meta__ = {
 "_edit_group_": true
@@ -2703,6 +2740,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block74" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 8662.59, 340.032 )
 __meta__ = {
 "_edit_group_": true
@@ -2718,6 +2756,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block39" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2627.3, -342.314 )
 __meta__ = {
 "_edit_group_": true
@@ -2733,6 +2772,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block8" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1453.64, 548.634 )
 __meta__ = {
 "_edit_group_": true
@@ -2748,6 +2788,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block26" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1961.24, 548.593 )
 __meta__ = {
 "_edit_group_": true
@@ -2763,6 +2804,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block54" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 9251.68, -743.945 )
 __meta__ = {
 "_edit_group_": true
@@ -2778,6 +2820,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block70" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 9289.99, -182.534 )
 __meta__ = {
 "_edit_group_": true
@@ -2793,6 +2836,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block38" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 3033.63, 1001.01 )
 __meta__ = {
 "_edit_group_": true
@@ -2808,6 +2852,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block3" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1580.54, 355.541 )
 __meta__ = {
 "_edit_group_": true
@@ -2823,6 +2868,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block21" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2088.14, 355.5 )
 __meta__ = {
 "_edit_group_": true
@@ -2838,6 +2884,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block43" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 3101.68, 356.732 )
 __meta__ = {
 "_edit_group_": true
@@ -2853,6 +2900,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block46" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 4608.83, 319.822 )
 __meta__ = {
 "_edit_group_": true
@@ -2868,6 +2916,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block12" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1834.34, 355.514 )
 __meta__ = {
 "_edit_group_": true
@@ -2883,6 +2932,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block34" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2341.94, 355.473 )
 __meta__ = {
 "_edit_group_": true
@@ -2898,6 +2948,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block15" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1834.34, 453.255 )
 __meta__ = {
 "_edit_group_": true
@@ -2913,6 +2964,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block62" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 6901.16, 453.681 )
 __meta__ = {
 "_edit_group_": true
@@ -2928,6 +2980,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block79" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 7662.54, 453.646 )
 __meta__ = {
 "_edit_group_": true
@@ -2943,6 +2996,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block30" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2341.94, 453.214 )
 __meta__ = {
 "_edit_group_": true
@@ -2958,6 +3012,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block17" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 1833.49, 550.138 )
 __meta__ = {
 "_edit_group_": true
@@ -2973,6 +3028,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block61" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 6900.31, 550.564 )
 __meta__ = {
 "_edit_group_": true
@@ -2988,6 +3044,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block83" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 7661.71, 552.026 )
 __meta__ = {
 "_edit_group_": true
@@ -3003,6 +3060,7 @@ position = Vector2( 0.00830078, 0.00665283 )
 shape = SubResource( 7 )
 
 [node name="Dirt Block32" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 2341.09, 550.097 )
 __meta__ = {
 "_edit_group_": true
