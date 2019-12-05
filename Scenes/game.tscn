@@ -230,7 +230,6 @@ scale = Vector2( 0.385215, 0.413064 )
 texture = ExtResource( 7 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 210.55, 453.014 )
 script = ExtResource( 8 )
 __meta__ = {
