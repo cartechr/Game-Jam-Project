@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=2]
+[gd_scene load_steps=48 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=2]
@@ -37,6 +37,7 @@
 [ext_resource path="res://assets/Dead bush.png" type="Texture" id=35]
 [ext_resource path="res://assets/New Piskel (21).png" type="Texture" id=36]
 [ext_resource path="res://assets/Real building.png" type="Texture" id=37]
+[ext_resource path="res://Scripts/Button4.gd" type="Script" id=38]
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -148,9 +149,6 @@ script = ExtResource( 1 )
 ]]
 position = Vector2( 769.653, 454.309 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Sprite" type="AnimatedSprite" parent="enemies/Enemy"]
 position = Vector2( 8.33203, -8.5918 )
@@ -352,10 +350,9 @@ texture = ExtResource( 23 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="VideoPlayer" type="VideoPlayer" parent="ParallaxBackground"]
-margin_left = -376.894
-margin_top = -494.417
-margin_right = 647.113
-margin_bottom = 93.5834
+margin_left = -1.0
+margin_right = 1023.0
+margin_bottom = 599.0
 stream = ExtResource( 24 )
 autoplay = true
 script = ExtResource( 25 )
@@ -3359,6 +3356,28 @@ texture = ExtResource( 32 )
 position = Vector2( 13022.8, 254.558 )
 scale = Vector2( 0.521969, 0.686201 )
 texture = ExtResource( 37 )
-[connection signal="body_entered" from="enemies/Enemy" to="Player" method="_on_Enemy_body_entered"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( 12819.6, 262.486 )
+script = ExtResource( 38 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button" type="Button" parent="Node2D"]
+margin_left = 59.0
+margin_top = 138.0
+margin_right = 165.0
+margin_bottom = 189.0
+
+[node name="Label" type="Label" parent="Node2D"]
+margin_left = 40.95
+margin_top = 146.2
+margin_right = 182.95
+margin_bottom = 215.2
+text = "Click Here To Advance"
+align = 1
+autowrap = true
 [connection signal="animation_finished" from="Player/AnimatedSprite" to="Player" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="ready" from="Grass/Timer" to="Grass" method="_on_Timer_ready"]
+[connection signal="pressed" from="Node2D/Button" to="Node2D" method="_on_Button_pressed"]

@@ -1,24 +1,25 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=2]
 [ext_resource path="res://Assets/31-ANC-A/sprite_1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/31-ANC-A/sprite_0.png" type="Texture" id=4]
 [ext_resource path="res://Assets/31-ANC-A/sprite_7.png" type="Texture" id=5]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_00.png" type="Texture" id=6]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_0.png" type="Texture" id=7]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_2.png" type="Texture" id=8]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_4.png" type="Texture" id=9]
-[ext_resource path="res://Assets/31-ANC-A Walking/sprite_3.png" type="Texture" id=10]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_0.png" type="Texture" id=11]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_1.png" type="Texture" id=12]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_0.png" type="Texture" id=6]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_4.png" type="Texture" id=8]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_0.png" type="Texture" id=10]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/31-ANC-A Walking/sprite_00.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Game Jam song (1).wav" type="AudioStream" id=14]
 [ext_resource path="res://Scripts/AudioStreamPlayer2D.gd" type="Script" id=15]
 [ext_resource path="res://Assets/Tile 3-1.png.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Ground (Rock).JPG" type="Texture" id=17]
 [ext_resource path="res://Scenes/BossEye.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Assets/New Piskel-1.png (2).png" type="Texture" id=19]
+[ext_resource path="res://Scripts/Lose Screen.gd" type="Script" id=19]
+[ext_resource path="res://Scripts/Win Screen.gd" type="Script" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -27,19 +28,19 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "attack",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "run",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": false,
 "name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "attack",
 "speed": 5.0
 } ]
 
@@ -157,10 +158,8 @@ autoplay = true
 script = ExtResource( 15 )
 
 [node name="Ground" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
-editor/display_folded = true
 __meta__ = {
 "_edit_group_": true
 }
@@ -511,10 +510,8 @@ position = Vector2( 64.2578, 559.406 )
 shape = SubResource( 3 )
 
 [node name="OneWayPlatform" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="OneWayPlatform"]
-editor/display_folded = true
 position = Vector2( 2240, 356.244 )
 z_index = -1
 __meta__ = {
@@ -587,33 +584,50 @@ anims/Boss = SubResource( 5 )
 position = Vector2( 3107.83, 216.493 )
 mode = 3
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Lose Screen" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 2970, 50 )
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Button" type="Button" parent="Lose Screen"]
+margin_left = -200.0
+margin_top = 180.0
 margin_right = 40.0
-margin_bottom = 14.0
+margin_bottom = 290.0
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="Lose Screen"]
+margin_left = -200.0
+margin_top = 180.0
 margin_right = 40.0
-margin_bottom = 40.0
+margin_bottom = 300.0
+text = "Win Screen
+"
+align = 1
+valign = 1
 
-[node name="Node2D" type="Node2D" parent="CanvasLayer"]
+[node name="Win Screen" type="Node2D" parent="."]
+position = Vector2( 2510, -290 )
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Node2D"]
-position = Vector2( -157.01, -11.899 )
-scale = Vector2( 0.261936, 0.20954 )
-texture = ExtResource( 19 )
-offset = Vector2( 751.425, 208.38 )
+[node name="Button" type="Button" parent="Win Screen"]
+margin_left = 250.0
+margin_top = 315.0
+margin_right = 494.0
+margin_bottom = 416.0
 
-[node name="Sprite2" type="Sprite" parent="CanvasLayer/Node2D"]
-position = Vector2( -24.7069, 68.3783 )
-scale = Vector2( 0.261936, 0.20954 )
-texture = ExtResource( 19 )
-offset = Vector2( 486.844, -174.733 )
-
-[node name="Sprite3" type="Sprite" parent="CanvasLayer/Node2D"]
-position = Vector2( 37.2931, 68.3783 )
-scale = Vector2( 0.261936, 0.20954 )
-texture = ExtResource( 19 )
-offset = Vector2( 486.844, -174.733 )
+[node name="Label" type="Label" parent="Win Screen"]
+margin_left = 242.0
+margin_top = 315.0
+margin_right = 500.0
+margin_bottom = 425.0
+text = "End Screen
+"
+align = 1
+valign = 1
 [connection signal="animation_finished" from="Player/AnimatedSprite" to="Player" method="_on_AnimatedSprite_animation_finished"]

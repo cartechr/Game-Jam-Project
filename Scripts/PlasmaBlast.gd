@@ -13,11 +13,8 @@ func set_plasmablast_direction(dir):
 		$AnimatedSprite.flip_h = true
 
 func _physics_process(delta):
-	var bodies = get_colliding_bodies()
-	for body in bodies:
-		if body.is_in_group("Enemy"):
-			if body.get_parent().name == "enemies":
-				get_node("/root/game")
+	pass
+	queue_free()
 	translate(velocity)
 	velocity.x = SPEED * delta * direction
 	$AnimatedSprite.play("shoot")
