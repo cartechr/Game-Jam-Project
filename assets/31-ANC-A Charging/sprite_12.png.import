@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sprite_12.png-da172e769854ac6b7b55ec6cb769d0e7.stex"
+path="res://.import/sprite_12.png-923694398b2bc29182461c94b0be03f1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/31-ANC-A Charging/sprite_12.png"
-dest_files=[ "res://.import/sprite_12.png-da172e769854ac6b7b55ec6cb769d0e7.stex" ]
+source_file="res://Assets/31-ANC-A Charging/sprite_12.png"
+dest_files=[ "res://.import/sprite_12.png-923694398b2bc29182461c94b0be03f1.stex" ]
 
 [params]
 
