@@ -23,6 +23,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.109293, 0.0940659 )
 frames = SubResource( 1 )
 animation = "shoot"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -34,4 +35,3 @@ scale = Vector2( 1.36832, 1.16535 )
 [node name="Timer" type="Timer" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_PlasmaBlast_body_entered"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

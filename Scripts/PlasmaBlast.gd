@@ -13,8 +13,6 @@ func set_plasmablast_direction(dir):
 		$AnimatedSprite.flip_h = true
 
 func _physics_process(delta):
-	pass
-	queue_free()
 	translate(velocity)
 	velocity.x = SPEED * delta * direction
 	$AnimatedSprite.play("shoot")

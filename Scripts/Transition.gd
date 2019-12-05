@@ -12,5 +12,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_Timer_timeout():
-	get_tree().change_scene("res://Scenes/Boss.tscn")
+
+func _on_CutScene_ready():
+	pass # Replace with function body.

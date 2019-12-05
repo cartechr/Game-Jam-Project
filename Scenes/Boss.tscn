@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/31-ANC-A Walking/sprite_2.png" type="Texture" id=7]
 [ext_resource path="res://Assets/31-ANC-A Walking/sprite_4.png" type="Texture" id=8]
 [ext_resource path="res://Assets/31-ANC-A Walking/sprite_3.png" type="Texture" id=9]
-[ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_0.png" type="Texture" id=10]
+[ext_resource path="res://Assets/sprite_0.png" type="Texture" id=10]
 [ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_1.png" type="Texture" id=11]
 [ext_resource path="res://Assets/31-ANC-A Bunnyhop/sprite_2.png" type="Texture" id=12]
 [ext_resource path="res://Assets/31-ANC-A Walking/sprite_00.png" type="Texture" id=13]
@@ -582,7 +582,7 @@ autoplay = "Boss"
 anims/Boss = SubResource( 5 )
 
 [node name="BossEye" parent="." instance=ExtResource( 18 )]
-position = Vector2( 3107.83, 216.493 )
+position = Vector2( 3110, 216.493 )
 mode = 3
 
 [node name="Lose Screen" type="Node2D" parent="."]

@@ -94,3 +94,7 @@ func _on_Player_animation_finished():
 	pass # Replace with function body.
 	
 	
+
+
+func _on_Area2D_body_entered(body):
+	get_tree().change_scene("res://Scenes/Transition.tscn")
