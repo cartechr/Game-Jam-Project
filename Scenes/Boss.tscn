@@ -93,6 +93,7 @@ tracks/3/keys = {
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 80, 450 )
+scale = Vector2( 2.00441, 2.5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
