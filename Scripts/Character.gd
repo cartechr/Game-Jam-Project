@@ -7,10 +7,12 @@ const FLOOR = Vector2(0, -1)
 
 const PLASMABLAST = preload("res://Scenes/PlasmaBlast.tscn")
 
-onready var World = get_node("/root/World")
+onready var World = get_node("/root/game")
 
 var velocity = Vector2()
 
+var jump = false
+var jump_speed = 10
 var on_ground = false
 var can_move = true
 var is_attacking = false
@@ -74,14 +76,15 @@ func _physics_process(delta):
 	
 	
 
-func _on_Enemy_body_entered(body):
+func _on_Crate_body_entered(body):
 	if can_move:
 		World.update_lives(-1)
+		velocity *= -1
+		velocity.y = jump_speed
 		move_and_slide(velocity, Vector2.UP, true)
 		can_move = false
 	yield(get_tree().create_timer(1), "timeout")
 	can_move = true
-
 
 func _on_AnimatedSprite_animation_finished():
 	is_attacking = false

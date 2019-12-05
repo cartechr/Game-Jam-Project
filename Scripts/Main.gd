@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var Lives = $"lives + etc/Lives"
-onready var Hearts = [$"lives + etc/Lives/Sprite", $"lives + etc/Lives/Sprite2", $"lives + etc/Lives/Sprite3"]
+onready var Lives = $"CanvasLayer/lives + etc/Lives"
+onready var Hearts = [$"CanvasLayer/lives + etc/Lives/Sprite", $"CanvasLayer/lives + etc/Lives/Sprite", $"CanvasLayer/lives + etc/Lives/Sprite"]
 
 var heart_full = load("res://Assets/New Piskel-1.png (2).png")
 var heart_half = load("res://Assets/Half Heart-1.png (1).png")
