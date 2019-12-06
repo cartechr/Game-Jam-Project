@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scripts/PlasmaBlast.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/EnemyBlast.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Bun Charge Shot/sprite_0.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Bun Charge Shot/sprite_1.png" type="Texture" id=3]
 
@@ -23,6 +23,7 @@ script = ExtResource( 1 )
 scale = Vector2( 0.109293, 0.0940659 )
 frames = SubResource( 1 )
 animation = "shoot"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
