@@ -5,6 +5,7 @@ var velocity = Vector2()
 var direction = 1
 
 
+onready var Game = get_node("/root/Boss")
     
 func set_plasmablast_direction(dir):
 	direction = dir
@@ -17,8 +18,8 @@ func _physics_process(delta):
 	$AnimatedSprite.play("shoot")
 	var bodies = get_overlapping_bodies()
 	for b in bodies:
-		if b.is_in_group("Enemy"):
-			b.queue_free()
+		if b.name == "Player":
+			Game.update_lives(-1)
 			queue_free()
   
 	
