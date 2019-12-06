@@ -7,9 +7,7 @@ var heart_full = load("res://Assets/New Piskel-1.png (2).png")
 var heart_half = load("res://Assets/Half Heart-1.png (1).png")
 var heart_empty = load("res://Assets/Half Heart-1.png.png")
 var is_moving = false
-var velocity = Vector2()
-const SPEED = 30
-const FLOOR = Vector2(0, -1)
+
 
 var lives = 6
 
